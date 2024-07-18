@@ -1,0 +1,136 @@
+
+  <header id="header" class="fixed-top d-flex align-items-center"  style="box-shadow: black;">
+  <div class="container">
+    <div class="header-container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>Weprint</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar" >
+        <ul>
+          
+            <li class="nav-item">
+                <a class="nav-link" routerLink="shop">Shop</a>
+            </li>
+            <li *ngIf="!isTokenThere" class="nav-item" >
+              <a class="nav-link" routerLink="register">Register</a>
+            </li>
+            <li *ngIf="!isTokenThere" class="nav-item">
+                <a class="nav-link" routerLink="login">Login</a>
+            </li>
+            <li *ngIf="isTokenThere" class="nav-item">
+                <a class="nav-link" routerLink="cart">Products</a>
+            </li>
+            <li *ngIf="isTokenThere" class="nav-item">
+              <a class="nav-link" routerLink="impression">Orders</a>
+          </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 d-flex" (submit)="search()">
+            <input 
+                class="form-control mr-sm-2 bg-transparent text-success" 
+                type="search" 
+                placeholder="Search products" 
+                aria-label="Search"
+                [(ngModel)]="term"
+                name="term"
+            >
+            <button class="btn btn-outline-success my-2 my-sm-0 mx-3" type="submit">Search</button>
+          </form>
+          <li  *ngIf="isTokenThere" class="dropdown"><img src="../assets/img/user.jpg" alt="profile"><i class="bi bi-chevron-down"></i>
+            <ul>
+             
+              <li><a routerLink="account">Profile</a></li>
+              <li><a (click)="logOut()">Log Out</a></li>
+            
+            </ul>
+          </li>
+          
+        
+      
+        
+      </nav><!-- .navbar -->
+
+    </div><!-- End Header Container -->
+  </div>
+</header><!-- End Header -->
+
+
+  <!-- ======= Hero Section ======= -->
+  <section *ngIf="!isTokenThere" id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
+      <h1>Your New Online Printing machine</h1>
+      <h2>Feel free to shop and customize your products as you like</h2>
+      <a routerLink="login" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- End Hero -->
+
+
+<router-outlet></router-outlet>
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Weprint</h3>
+            <p>
+              32, Rue Ahmed Chaouki  <br>
+              Hammam-Plage<br>
+              Tunisia <br><br>
+              <strong>Phone:</strong> +216 28657446<br>
+              <strong>Email:</strong> Info@weprint-tn.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Shop</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">E-Commerce</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Printing Services</a></li>
+            </ul>
+          </div>
+
+        
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>WePrint</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+       
+        <a href="https://www.facebook.com/YesWePrint.tn" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->

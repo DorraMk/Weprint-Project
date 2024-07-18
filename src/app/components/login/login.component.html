@@ -1,0 +1,51 @@
+<body>
+    
+<div class="fenetre" style="margin-top: 5rem;">
+    <br>
+    <h1 class="mx-auto text-center mb-5">Login</h1>
+    <form class="col-4 mx-auto mt-5" action="" (submit)="logIn()">
+        <input 
+            type="text" 
+            placeholder="Username" 
+            name="username" 
+            id="username" 
+            style="border: 1px solid #fffa;" 
+            class="my-3 bg-transparent rounded p-2 col-12 d-block text-light" 
+            [(ngModel)]="username"
+        />
+        <input 
+            type="password" 
+            placeholder="Password" 
+            name="password" 
+            id="password" 
+            style="border: 1px solid #fffa;" 
+            class="my-3 bg-transparent rounded p-2 col-12 d-block text-light" 
+            [(ngModel)]="password"
+        />
+        <input 
+            type="submit"
+            value="Log in" 
+            style="background: rgb(17, 97, 97);
+            border: 0;
+
+            color: #fff;
+            transition: 0.4s;
+            font-size: 13px;
+         
+            border-radius: 2px;
+            transition: 0.3s;
+            border-radius: 50px;
+             box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+            position: relative;" 
+            
+        /> 
+        Not registred ? <a style="color :rgb(17, 97, 97)" routerLink="register">Register Here</a>
+        <h4 
+            *ngIf="error"
+            style="text-align: center;" 
+            class="alert-danger p-2 m-5 rounded"
+        >{{error}}</h4>
+    </form>
+    <br><br><br><br>
+</div>
+</body>
