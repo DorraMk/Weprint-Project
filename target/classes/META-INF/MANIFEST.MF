@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: user
+Build-Jdk: 17.0.1
+Implementation-Title: ecommercebackend
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.michaelakamihe
+Implementation-URL: https://spring.io/projects/spring-boot/ecommerceback
+ end
+Created-By: Maven Integration for Eclipse
+
